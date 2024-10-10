@@ -19,4 +19,4 @@ jobs:
       - name: Run W3C HTML Validator
         uses: nickcolley/w3c-html-validator-action@v1.0.0
         with:
-          file-path: './public'  # Checks the entire repository for HTML files
+          file-path: '/demo-gitaction'  # Checks the entire repository for HTML files
