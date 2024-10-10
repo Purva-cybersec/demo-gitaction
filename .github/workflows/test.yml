@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run HTML Proofer (HTML validator)
-        uses: gr1nch7/html-validator-action@v0.1.0
+      - name: Run W3C HTML Validator
+        uses: nickcolley/w3c-html-validator-action@v1.0.0
         with:
-          dir_path: './public'  # Checks the entire repository for HTML files
+          file-path: './public'  # Checks the entire repository for HTML files
