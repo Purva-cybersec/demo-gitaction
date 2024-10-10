@@ -4,19 +4,14 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   html_validation:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run HTML Proofer (HTML validator)
-        uses: chris-branch/html-proofer-action@v0.2.0
-        with:
-          directory: . # This checks the entire repository for HTML files
+    - uses: actions/checkout@v2
+    - name: Validate HTML
+      uses: cyb3r-jak3/html-validator-action@v1
+      with:
+        folder: "./public"
