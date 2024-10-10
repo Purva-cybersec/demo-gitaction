@@ -16,7 +16,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run W3C HTML Validator
-        uses: chris-branch/html-proofer-action@v0.2.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          file-path: './demo-gitaction'  # Checks the entire repository for HTML files
+          node-version: '14'
+
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Run HTMLHint
+        run: htmlhint '**/*.html'
